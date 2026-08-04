@@ -1,4 +1,6 @@
-﻿namespace BrestCanser.Api.Controllers;
+﻿using BrestCanser.Api.Authentication.Filter;
+
+namespace BrestCanser.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -15,7 +17,8 @@ public class PredictionHistoryController : ControllerBase
 	}
 
 	[HttpGet("")]
-	public async Task<IActionResult> GetHistory()
+    [HasPermission(Permissions.GetPredictionHistory)]
+    public async Task<IActionResult> GetHistory()
 	{
 		var result = await _historyService.GetHistoryAsync(User.GetUserId()!);
 
@@ -23,7 +26,8 @@ public class PredictionHistoryController : ControllerBase
 	}
 
 	[HttpGet("with-status")]
-	public async Task<IActionResult> GetHistoryWithStatus([FromQuery] PredictionStatus? status)
+    [HasPermission(Permissions.GetPredictionHistoryWithStatus)]
+    public async Task<IActionResult> GetHistoryWithStatus([FromQuery] PredictionStatus? status)
 	{
 		var result = await _historyService.GetHistoryWithStatusAsync(User.GetUserId()!, status);
 
@@ -31,7 +35,8 @@ public class PredictionHistoryController : ControllerBase
 	}
 
 	[HttpGet("statistics")]
-	public async Task<IActionResult> GetStatistics()
+    [HasPermission(Permissions.GetPredictionHistoryStatistics)]
+    public async Task<IActionResult> GetStatistics()
 	{
 		var result = await _historyService.GetStatisticsAsync(User.GetUserId()!);
 
@@ -40,7 +45,8 @@ public class PredictionHistoryController : ControllerBase
 
 	[HttpGet("report")]
 	[EnableRateLimiting(RateLimiters.SensitivePolicy)]
-	public async Task<IActionResult> GetReport()
+    [HasPermission(Permissions.GetPredictionHistoryReport)]
+    public async Task<IActionResult> GetReport()
 	{
 		var result = await _historyService.GenerateReportAsync(User.GetUserId()!);
 

@@ -1,4 +1,6 @@
-﻿namespace BrestCanser.Api.Controllers;
+﻿using BrestCanser.Api.Authentication.Filter;
+
+namespace BrestCanser.Api.Controllers;
 
 [Route("/[Controller]")]
 [ApiController]
@@ -14,7 +16,8 @@ public class AccountController : ControllerBase
 	}
 
 	[HttpGet("profile")]
-	public async Task<IActionResult> Info()
+    [HasPermission(Permissions.GetProfile)]
+    public async Task<IActionResult> Info()
 	{
 		var result = await _userService.GetProfileAsync(User.GetUserId()!);
 
@@ -22,7 +25,8 @@ public class AccountController : ControllerBase
 	}
 
 	[HttpPut("update-profile")]
-	public async Task<IActionResult> Update([FromBody] UpdateProfileRequest request)
+    [HasPermission(Permissions.UpdateProfile)]
+    public async Task<IActionResult> Update([FromBody] UpdateProfileRequest request)
 	{
 		var result = await _userService.UpdateProfileAsync(User.GetUserId()!, request);
 
@@ -31,7 +35,8 @@ public class AccountController : ControllerBase
 
 	[HttpPut("change-password")]
 	[EnableRateLimiting(RateLimiters.SensitivePolicy)]
-	public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+    [HasPermission(Permissions.ChangePassword)]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
 	{
 		var result = await _userService.ChangePasswordAsync(User.GetUserId()!, request);
 

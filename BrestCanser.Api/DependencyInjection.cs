@@ -1,4 +1,5 @@
 ﻿using BrestCanser.Api.Authentication;
+using BrestCanser.Api.Authentication.Filter;
 using BrestCanser.Api.Engine;
 using BrestCanser.Api.Options;
 using BrestCanser.Api.Settings;
@@ -65,14 +66,18 @@ public static class DependencyInjection
 
 	private static IServiceCollection AddAuthorConfig(this IServiceCollection services, IConfiguration configuration)
 	{
-		services.AddIdentity<ApplicationUser, IdentityRole>()
+		services.AddIdentity<ApplicationUser, ApplicationRole>()
 			 .AddEntityFrameworkStores<ApplicationDbContext>()
 			 .AddDefaultTokenProviders();
 
 		services.AddScoped<IJwtProvider, JwtProvider>();
 
 
-		services.AddOptions<JwtOptions>()
+        services.AddTransient<IAuthorizationHandler, PermissionAuthorizationHandler>();
+        services.AddTransient<IAuthorizationPolicyProvider, PermissionAuthorizationPolicyProvider>();
+
+
+        services.AddOptions<JwtOptions>()
 			.BindConfiguration(JwtOptions.SectionName)
 			.ValidateDataAnnotations()
 			.ValidateOnStart();
@@ -94,7 +99,7 @@ public static class DependencyInjection
 				ValidateIssuer = true,
 				ValidateAudience = true,
 				ValidateLifetime = true,
-				IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings?.key!)),
+				IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings?.Key!)),
 				ValidIssuer = JwtSettings?.Issuer,
 				ValidAudience = JwtSettings?.Audience,
 			};

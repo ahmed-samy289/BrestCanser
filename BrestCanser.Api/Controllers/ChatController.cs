@@ -1,4 +1,6 @@
-﻿namespace BrestCanser.Api.Controllers;
+﻿using BrestCanser.Api.Authentication.Filter;
+
+namespace BrestCanser.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -13,7 +15,8 @@ public class ChatController : ControllerBase
 		_chatService = chatService;
 	}
 	[HttpPost("ask")]
-	public async Task<IActionResult> Ask([FromBody] ChatRequest request)
+    [HasPermission(Permissions.AskChat)]
+    public async Task<IActionResult> Ask([FromBody] ChatRequest request)
 	{
 		if (string.IsNullOrWhiteSpace(request.Prompt))
 		{

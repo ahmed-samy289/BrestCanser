@@ -1,4 +1,6 @@
-﻿namespace BrestCanser.Api.Controllers;
+﻿using BrestCanser.Api.Authentication.Filter;
+
+namespace BrestCanser.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -13,7 +15,8 @@ public class NotificationsController : ControllerBase
 	}
 
 	[HttpGet("")]
-	public async Task<IActionResult> GetNotifications()
+    [HasPermission(Permissions.GetNotifications)]
+    public async Task<IActionResult> GetNotifications()
 	{
 		var result = await _notificationService.GetNotificationsAsync(User.GetUserId()!);
 
@@ -21,7 +24,8 @@ public class NotificationsController : ControllerBase
 	}
 
 	[HttpPut("{id}/mark-read")]
-	public async Task<IActionResult> MarkAsRead(int id)
+    [HasPermission(Permissions.MarkNotificationAsRead)]
+    public async Task<IActionResult> MarkAsRead(int id)
 	{
 		var result = await _notificationService.MarkAsReadAsync(id, User.GetUserId()!);
 
@@ -29,7 +33,8 @@ public class NotificationsController : ControllerBase
 	}
 
 	[HttpPut("mark-all-read")]
-	public async Task<IActionResult> MarkAllAsRead()
+    [HasPermission(Permissions.MarkAllNotificationsAsRead)]
+    public async Task<IActionResult> MarkAllAsRead()
 	{
 		var result = await _notificationService.MarkAllAsReadAsync(User.GetUserId()!);
 

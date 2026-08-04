@@ -4,6 +4,7 @@ using BrestCanser.Api.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BrestCanser.Api.Persistance.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260804202922_seedIdentityTables")]
+    partial class seedIdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -398,97 +401,6 @@ namespace BrestCanser.Api.Persistance.Migrations
                             ClaimType = "permissions",
                             ClaimValue = "risk-assessment:create",
                             RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:profile",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:update-profile",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:change-password",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            ClaimType = "permissions",
-                            ClaimValue = "chat:ask",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            ClaimType = "permissions",
-                            ClaimValue = "ml:predict",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:mark-read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:mark-all-read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:status",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:statistics",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:report",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            ClaimType = "permissions",
-                            ClaimValue = "risk-assessment:create",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
                         });
                 });
 

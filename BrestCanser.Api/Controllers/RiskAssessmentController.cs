@@ -1,4 +1,5 @@
-﻿using BrestCanser.Api.Contracts.RiskAssessment;
+﻿using BrestCanser.Api.Authentication.Filter;
+using BrestCanser.Api.Contracts.RiskAssessment;
 
 namespace BrestCanser.Api.Controllers;
 
@@ -10,7 +11,8 @@ public class RiskAssessmentController(IRiskAssessmentService assessmentService) 
 	private readonly IRiskAssessmentService _assessmentService = assessmentService;
 
 	[HttpPost("assess")]
-	public async Task<IActionResult> Assess([FromBody] RiskAssessmentRequest request, CancellationToken cancellationToken)
+    [HasPermission(Permissions.RiskAssessment)]
+    public async Task<IActionResult> Assess([FromBody] RiskAssessmentRequest request, CancellationToken cancellationToken)
 	{
 		var result = await _assessmentService.AssessAsync(request, cancellationToken);
 

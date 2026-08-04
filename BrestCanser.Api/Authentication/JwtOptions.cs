@@ -7,7 +7,7 @@ public class JwtOptions
 	public static string SectionName = "Jwt";
 
 	[Required]
-	public string key { get; init; } = string.Empty;
+	public string Key { get; init; } = string.Empty;
 
 	[Required]
 	public string Issuer { get; init; } = string.Empty;

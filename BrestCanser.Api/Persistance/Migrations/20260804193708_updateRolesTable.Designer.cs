@@ -4,6 +4,7 @@ using BrestCanser.Api.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BrestCanser.Api.Persistance.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260804193708_updateRolesTable")]
+    partial class updateRolesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,26 +56,6 @@ namespace BrestCanser.Api.Persistance.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "4f570688-9ed8-474f-9975-1317c87f1f7f",
-                            ConcurrencyStamp = "e566a007-a817-454d-bb8f-10d1f09e5715",
-                            IsDefault = false,
-                            IsDeleted = false,
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "ce197ed8-850f-4272-880f-5b929837ff9e",
-                            ConcurrencyStamp = "e108b4c9-9c16-4396-a91a-39a3b9e9c11d",
-                            IsDefault = true,
-                            IsDeleted = false,
-                            Name = "Member",
-                            NormalizedName = "MEMBER"
-                        });
                 });
 
             modelBuilder.Entity("BrestCanser.Api.Entites.ApplicationUser", b =>
@@ -148,26 +131,6 @@ namespace BrestCanser.Api.Persistance.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "e232de14-def2-4d76-9dcb-05f0eb7619a1",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "5abffc5a-7e3a-4963-a4e3-755bdda4e3d5",
-                            Email = "admin@breast-cancer.com",
-                            EmailConfirmed = true,
-                            FirstName = "Breast Cancer",
-                            LastName = "Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@BREAST-CANCER.COM",
-                            NormalizedUserName = "ADMIN@BREAST-CANCER.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIhTUhCbYnJnXakFznPpUk/iFzWU4Nc1/liV2gScq58jo1H/oKRb+IgzqeLkH5rJqw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "AC6C88E23E674BC0AA53B4B195D91D56",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@breast-cancer.com"
-                        });
                 });
 
             modelBuilder.Entity("BrestCanser.Api.Entites.Notification", b =>
@@ -306,190 +269,6 @@ namespace BrestCanser.Api.Persistance.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:profile",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:update-profile",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:change-password",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ClaimType = "permissions",
-                            ClaimValue = "chat:ask",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ClaimType = "permissions",
-                            ClaimValue = "ml:predict",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:read",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:mark-read",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:mark-all-read",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:read",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:report",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:statistics",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:status",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ClaimType = "permissions",
-                            ClaimValue = "risk-assessment:create",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:profile",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:update-profile",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            ClaimType = "permissions",
-                            ClaimValue = "account:change-password",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            ClaimType = "permissions",
-                            ClaimValue = "chat:ask",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            ClaimType = "permissions",
-                            ClaimValue = "ml:predict",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:mark-read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            ClaimType = "permissions",
-                            ClaimValue = "notifications:mark-all-read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:read",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:status",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:statistics",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            ClaimType = "permissions",
-                            ClaimValue = "prediction-history:report",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            ClaimType = "permissions",
-                            ClaimValue = "risk-assessment:create",
-                            RoleId = "ce197ed8-850f-4272-880f-5b929837ff9e"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -552,13 +331,6 @@ namespace BrestCanser.Api.Persistance.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "e232de14-def2-4d76-9dcb-05f0eb7619a1",
-                            RoleId = "4f570688-9ed8-474f-9975-1317c87f1f7f"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
