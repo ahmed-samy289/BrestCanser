@@ -1,0 +1,729 @@
+{
+  "info": {
+    "_postman_id": "38e90374-b26a-4aed-860f-d1e4599b7bce",
+    "name": "Sakeena",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51543499",
+    "_collection_link": "https://go.postman.co/collection/51543499-38e90374-b26a-4aed-860f-d1e4599b7bce?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"mousttafasamir@gmail.com\",\r\n    \"password\": \"Password@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/Auth",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "Auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NjBhOTIzNi1kMzhmLTQxYTgtYmY4My0xM2ZjNzdjMjY4YTIiLCJlbWFpbCI6ImFobWVkQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJTYW15IiwianRpIjoiNGYxNDdiOTQtOTQyNy00OGQ5LWEyMDktYjQ0MmU2MTk3YjQ0IiwiZXhwIjoxNzc0NDQ0ODM0LCJpc3MiOiJCcmVzdENhbnNlciIsImF1ZCI6IkJyZXN0Q2Fuc2VyIHVzZXJzIn0.kIktWTnnGiLmoXlgrPMJOs2dX3MikQjtEVvlV9yxdD4\",\r\n    \"refreshToken\": \"ytabhrhlbn9aDeBQ5blfMdqkPOewDD2CBz/VR5c86HoN8mf8oznnvYcUsu16RW8MtUoqQ2WuBz1ojI7hE4iGJw==\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/Auth/refresh",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "Auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Revoke",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NGQ5NjdiOS1kNDk4LTRkMzMtOTNkNS01YmJiZWYzMjA3OWYiLCJlbWFpbCI6Im1vdXN0dGFmYXNhbWlyQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJNb3N0YWZhIiwiZmFtaWx5X25hbWUiOiJTYW1pciIsImp0aSI6Ijk0ZTY1MDE1LTNmYzItNGMzMi1iMTZjLTlmOWUwMjlkMjI2YiIsImV4cCI6MTc3Njk4ODk0OCwiaXNzIjoiQnJlc3RDYW5zZXIiLCJhdWQiOiJCcmVzdENhbnNlciB1c2VycyJ9.yfACZ9GfV4jRbbGUvzcn9SSzWNFzMx06bcyDrptrJBU\",\r\n    \r\n    \"refreshToken\": \"q99S+988mBTaRiwhysqo3TUtxYDJkCCaEzSb7VmFKUvF3KSB01Qk9BLCCO3W9XFRLKUcb4KO07h+XDCFc6dODQ==\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/Auth/revoke-refresh-token",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "Auth",
+                "revoke-refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"FirstName\": \"Mostafa\",\r\n    \"LastName\": \"Samir\",\r\n    \"email\": \"mousttafasamir@gmail.com\",\r\n    \"password\": \"Password@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/Auth/register",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "Auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forget Password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"sanegool55@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/Auth/forget-password",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "Auth",
+                "forget-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify code",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"sanegool55@gmail.com\",\r\n    \"code\": \"59540\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/Auth/verify-code",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "Auth",
+                "verify-code"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"sanegool55@gmail.com\",\r\n    \"code\": \"59540\",\r\n    \"NewPassword\": \"Password@12345\",\r\n    \"ConfirmPassword\": \"Password@12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/Auth/reset-password",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "Auth",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Account",
+      "item": [
+        {
+          "name": "Get User Profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NGQ5NjdiOS1kNDk4LTRkMzMtOTNkNS01YmJiZWYzMjA3OWYiLCJlbWFpbCI6Im1vdXN0dGFmYXNhbWlyQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJNb3N0YWZhIiwiZmFtaWx5X25hbWUiOiJTYW1pciIsImp0aSI6ImI3ZjZhODNhLWZmYjQtNDY2Ni05OGY2LTI4NmUzMTQ0ZGVkYyIsImV4cCI6MTc3Njc1MDEzNCwiaXNzIjoiQnJlc3RDYW5zZXIiLCJhdWQiOiJCcmVzdENhbnNlciB1c2VycyJ9.BakUfjY33L1TE6Eino1cWWVpFH2nblY8Bt8o-r6M8Lo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/account/profile",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "account",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYjVjNGQzNi1hMmI1LTQxODctOWFjMS1lYzY0N2JjMTU4MzUiLCJlbWFpbCI6ImFobWVkQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJTYW15IiwianRpIjoiM2IxODgyMTAtODRhZi00ZGI2LTk4YmYtNzU1M2I4NDhkYTY5IiwiZXhwIjoxNzc2MDA4MTEzLCJpc3MiOiJCcmVzdENhbnNlciIsImF1ZCI6IkJyZXN0Q2Fuc2VyIHVzZXJzIn0.rzMtFZmNYiFR5LCGO38Z4sc6W_6ijX_LddBPs41cPEM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"ahmed@test.com\",\r\n  \"FirstName\": \"ahmed\",\r\n  \"LastName\": \"elehelaly\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/account/update-profile",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "account",
+                "update-profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYjVjNGQzNi1hMmI1LTQxODctOWFjMS1lYzY0N2JjMTU4MzUiLCJlbWFpbCI6ImFobWVkQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJTYW15IiwianRpIjoiM2IxODgyMTAtODRhZi00ZGI2LTk4YmYtNzU1M2I4NDhkYTY5IiwiZXhwIjoxNzc2MDA4MTEzLCJpc3MiOiJCcmVzdENhbnNlciIsImF1ZCI6IkJyZXN0Q2Fuc2VyIHVzZXJzIn0.rzMtFZmNYiFR5LCGO38Z4sc6W_6ijX_LddBPs41cPEM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"CurrentPassword\": \"Password@123\",\r\n  \"NewPassword\": \"Ahmed@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/account/change-password",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "account",
+                "change-password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Chat",
+      "item": [
+        {
+          "name": "Ask",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"Prompt\": \"What are the main differences between non-invasive and invasive breast cancer in terms of progression, risk, and treatment approach?\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/Chat/ask",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "Chat",
+                "ask"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ML: Image Scan",
+      "item": [
+        {
+          "name": "Predict",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NGQ5NjdiOS1kNDk4LTRkMzMtOTNkNS01YmJiZWYzMjA3OWYiLCJlbWFpbCI6Im1vdXN0dGFmYXNhbWlyQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJNb3N0YWZhIiwiZmFtaWx5X25hbWUiOiJTYW1pciIsImp0aSI6IjYxYWE0ZDVmLWJlZGYtNGY2Yi05ZjNkLTJkNDU4YjI5OTZlMSIsImV4cCI6MTc3NzE2NDEyNiwiaXNzIjoiQnJlc3RDYW5zZXIiLCJhdWQiOiJCcmVzdENhbnNlciB1c2VycyJ9.guGbI2rdwC2p9zAwAryDLrtL23pWMeG9SIy-XWBlCUM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "a5d88ade-113c-4c81-8667-f3aeb86e81e5",
+                  "src": "/C:/Users/MANDO/Desktop/1.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/ML",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "ML"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prediction History",
+      "item": [
+        {
+          "name": "Get History",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NGQ5NjdiOS1kNDk4LTRkMzMtOTNkNS01YmJiZWYzMjA3OWYiLCJlbWFpbCI6Im1vdXN0dGFmYXNhbWlyQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJNb3N0YWZhIiwiZmFtaWx5X25hbWUiOiJTYW1pciIsImp0aSI6IjY0ZTY4OGI4LTE2YjgtNGM0Yi04NTJlLWM0MmZkZjY1OTNkOSIsImV4cCI6MTc3NzE2NzA5NywiaXNzIjoiQnJlc3RDYW5zZXIiLCJhdWQiOiJCcmVzdENhbnNlciB1c2VycyJ9.1rKYzp-lmb63z2E35SvqFpZthCUcQ8hDbH6UcAfYn6k",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/PredictionHistory",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "PredictionHistory"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get History With Status",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyYjc4NDI3MS01Y2U0LTQ4OTctYTIyNS04NWRlMWNjMTc3N2IiLCJlbWFpbCI6InNhbmVnb29sNTVAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJTYW15IiwianRpIjoiYWE4Y2E4NTUtYTBkMy00ODlmLWI2YzQtYTFhYjkxOGVkZWRlIiwiZXhwIjoxNzc2NjQxMTY3LCJpc3MiOiJCcmVzdENhbnNlciIsImF1ZCI6IkJyZXN0Q2Fuc2VyIHVzZXJzIn0.3zU3bhfC14RXMeRM4BpVeTr9LYHbcIYEWQNThPVQ8eo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/PredictionHistory/with-status?status=Benign",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "PredictionHistory",
+                "with-status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "Benign"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get History Statistics",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyYjc4NDI3MS01Y2U0LTQ4OTctYTIyNS04NWRlMWNjMTc3N2IiLCJlbWFpbCI6InNhbmVnb29sNTVAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJTYW15IiwianRpIjoiYWE4Y2E4NTUtYTBkMy00ODlmLWI2YzQtYTFhYjkxOGVkZWRlIiwiZXhwIjoxNzc2NjQxMTY3LCJpc3MiOiJCcmVzdENhbnNlciIsImF1ZCI6IkJyZXN0Q2Fuc2VyIHVzZXJzIn0.3zU3bhfC14RXMeRM4BpVeTr9LYHbcIYEWQNThPVQ8eo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/PredictionHistory/statistics",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "PredictionHistory",
+                "statistics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Report",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NGQ5NjdiOS1kNDk4LTRkMzMtOTNkNS01YmJiZWYzMjA3OWYiLCJlbWFpbCI6Im1vdXN0dGFmYXNhbWlyQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJNb3N0YWZhIiwiZmFtaWx5X25hbWUiOiJTYW1pciIsImp0aSI6IjY0ZTY4OGI4LTE2YjgtNGM0Yi04NTJlLWM0MmZkZjY1OTNkOSIsImV4cCI6MTc3NzE2NzA5NywiaXNzIjoiQnJlc3RDYW5zZXIiLCJhdWQiOiJCcmVzdENhbnNlciB1c2VycyJ9.1rKYzp-lmb63z2E35SvqFpZthCUcQ8hDbH6UcAfYn6k",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/PredictionHistory/report",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "PredictionHistory",
+                "report"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "Get Notifications",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NGQ5NjdiOS1kNDk4LTRkMzMtOTNkNS01YmJiZWYzMjA3OWYiLCJlbWFpbCI6Im1vdXN0dGFmYXNhbWlyQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJNb3N0YWZhIiwiZmFtaWx5X25hbWUiOiJTYW1pciIsImp0aSI6IjM2OGMxYjY1LTA2YTUtNDc5Yy1hNDllLWUzODE4NTk4OTk0YSIsImV4cCI6MTc3ODUxODk3MiwiaXNzIjoiQnJlc3RDYW5zZXIiLCJhdWQiOiJCcmVzdENhbnNlciB1c2VycyJ9.UAx3kemdS_iLZjtaNO_M4YSIax3jElIhtqhRFxCVF2M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/notifications",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "notifications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Mark As Read",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/notifications/1/mark-read",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "notifications",
+                "1",
+                "mark-read"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Mark All As Read",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/notifications/mark-all-read",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "notifications",
+                "mark-all-read"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Risk Assessment",
+      "item": [
+        {
+          "name": "Risk Assess",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NGQ5NjdiOS1kNDk4LTRkMzMtOTNkNS01YmJiZWYzMjA3OWYiLCJlbWFpbCI6Im1vdXN0dGFmYXNhbWlyQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJNb3N0YWZhIiwiZmFtaWx5X25hbWUiOiJTYW1pciIsImp0aSI6IjM2OGMxYjY1LTA2YTUtNDc5Yy1hNDllLWUzODE4NTk4OTk0YSIsImV4cCI6MTc3ODUxODk3MiwiaXNzIjoiQnJlc3RDYW5zZXIiLCJhdWQiOiJCcmVzdENhbnNlciB1c2VycyJ9.UAx3kemdS_iLZjtaNO_M4YSIax3jElIhtqhRFxCVF2M",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ageGroup\": 2,\r\n  \"ethnicity\": 1,\r\n  \"bmiCategory\": 0,\r\n  \"menarcheAge\": 0,\r\n  \"pregnancyHistory\": 0,\r\n  \"menopauseStatus\": 1,\r\n  \"familyHistoryLevel\": 0,\r\n  \"earlyFamilyDiagnosis\": 1,\r\n  \"brcaMutation\": 0,\r\n  \"breastDensity\": 1,\r\n  \"biopsyResult\": 0,\r\n  \"radiationHistory\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://sakeena.runasp.net/api/RiskAssessment/assess",
+              "protocol": "http",
+              "host": [
+                "sakeena",
+                "runasp",
+                "net"
+              ],
+              "path": [
+                "api",
+                "RiskAssessment",
+                "assess"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
